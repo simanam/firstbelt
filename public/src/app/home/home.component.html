@@ -1,0 +1,18 @@
+<div>
+  <h3>These pets are looking for a home!</h3> 
+  <a [routerLink]="['/pets/new']">Add a pet to the shelter</a>
+  <p>We have quotes by:</p>
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>Type</th> 
+      <th>Actions</th> 
+    </tr>
+    <tr *ngFor="let pet of pets">
+      <td>{{pet.name}}</td>
+      <td>{{pet.type}}</td>
+      <td><button (click)="editButtonClicked(pet)">Edit</button><button (click)="showButton(pet)">Details</button></td>
+      
+    </tr>
+  </table>
+</div>

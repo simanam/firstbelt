@@ -1,0 +1,15 @@
+<div *ngIf = 'selectedpet'>
+        <a [routerLink]="['/pets']">Home</a>
+
+        <h3>Details about {{selectedpet.name}}</h3>
+        
+        <p>Pet type: {{selectedpet.type}}</p>
+        <p>Description: {{selectedpet.description}}</p>
+        <p>Skills: {{selectedpet.skill1}}, {{selectedpet.skill2}}, {{selectedpet.skill3}}</p>
+        <p>Likes:{{selectedpet.likes.length}}</p>
+
+        <button   (click)="likeButtonClicked(selectedpet._id)">Like this pet</button>
+        <button (click)="destroyTask(selectedpet._id)">Adopt this pet!</button>
+
+
+</div>

@@ -1,0 +1,42 @@
+<div >
+
+  <h3>These pets are looking for a home!</h3>
+
+  <form (submit)="onSubmit(mform)" class="postForm" #mform="ngForm">
+   <div *ngIf="errormsg">
+      <p style="color: red" *ngIf="errormsg.errors.name">{{errormsg.errors.name.message}}</p>
+      <p style="color: red" *ngIf="errormsg.errors.type">{{errormsg.errors.type.message}}</p>
+    </div>
+    <p style="color: red" *ngIf="petName">{{petName}}</p>
+  
+    
+
+    <label>Pet name:
+      <input type="text" name="name" ngModel/>
+    </label>
+    <label>Pet type:
+      <input type="text" name="type" ngModel/>
+    </label>
+    <label>Description:
+      <input type="text" name="description" ngModel/>
+    </label>
+    <label>Skills:
+      <ul>
+        <li>Skill 1:
+          <input type="text" name="skill1" ngModel/>
+        </li>
+        <li>Skill 2:
+          <input type="text" name="skill2" ngModel/>
+        </li>
+        <li>Skill 3:
+          <input type="text" name="skill3" ngModel/>
+        </li>
+      </ul>
+    </label>
+
+    <input type="submit" value="Add pet" />
+    
+
+  </form>
+  <button [routerLink]="['/pets']">Cancel</button>
+</div>
